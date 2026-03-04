@@ -38,16 +38,16 @@ const createBookingSystem = (movieName: string, totalSeats: number) => {
     },
 
     getBookingStats(): object {
-      let seatOrder = 0;
+      let bookedCount = 0;
       for (let i = 0; i < seatStatus.length; i++) {
         if (seatStatus[i] === true) {
-          seatOrder++;
+          bookedCount++;
         }
       }
       return {
         movieName,
-        seatOrder,
-        available: totalSeats - seatOrder,
+        bookedCount: bookedCount,
+        availableCount: totalSeats - bookedCount,
       };
     },
   };
